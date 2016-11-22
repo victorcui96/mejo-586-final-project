@@ -1,0 +1,23 @@
+{
+  "name": "mejo-586-final-project",
+  "version": "1.0.0",
+  "description": "a mashup on information related to Obamacare. Makes use of several free APIs",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorcui96/mejo-586-final-project.git"
+  },
+  "keywords": [
+    "API",
+    "Obamacare"
+  ],
+  "author": "Victor Cui",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/victorcui96/mejo-586-final-project/issues"
+  },
+  "homepage": "https://github.com/victorcui96/mejo-586-final-project#readme"
+}
