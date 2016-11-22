@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/victorcui96/mejo-586-final-project/issues"
   },
-  "homepage": "https://github.com/victorcui96/mejo-586-final-project#readme"
+  "homepage": "https://github.com/victorcui96/mejo-586-final-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
 }

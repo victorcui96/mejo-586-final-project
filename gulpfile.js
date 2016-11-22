@@ -17,7 +17,7 @@ gulp.task('sass', function() {
 			cascade: false
 			}))
         .pipe(rename(function(path){
-        	path.extname = ".min.css"
+        	path.extname = ".min.css";
         }))
         //Write resulting CSS in output folder
         .pipe(gulp.dest('./css/'));

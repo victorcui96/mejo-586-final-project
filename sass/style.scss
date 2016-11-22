@@ -1,0 +1,26 @@
+#menu {
+    display: inline;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 40px;
+    z-index: 70;
+    width: 100%;
+    li {
+        background: rgba(255, 255, 255, .5);
+        border-radius: 10px;
+        list-style-type: none;
+        display: inline-block;
+        border: thin solid grey;
+        margin: 10px;
+        padding: 10px;
+        a {
+            padding: 10px 10px;
+            color: black;
+        }
+        &.active {
+            background: rgba(0, 0, 0, .5);
+            color: white;
+        }
+    }
+}

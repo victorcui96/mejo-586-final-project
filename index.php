@@ -20,6 +20,8 @@
     <!-- Bootstrap core CSS -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- FullPage CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.css">
     <!-- Custom styles for this template -->
     <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,84 +32,118 @@
 </head>
 
 
-<?php
-ini_set('display_errors', 1); //set this to 0 in public
-require_once('TwitterAPIExchange.php');
 
-/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
-$settings = array(
-    'oauth_access_token' => "1738158084-Hdus8owFL6OHb0qkQ4aBrGjKAus5X269VknbGlM",
-    'oauth_access_token_secret' => "uVEcl6go5FDGJThAx371W1pgt9LGPSTqh35jKMAt0D9Al",
-    'consumer_key' => "6njXWGA0JLyOHaPVoroegriLY",
-    'consumer_secret' => "EB0d5XrGiYLS9t4bYI6WSv3GesKKjgMDpD4cw0SrNOetZmi8b5"
-);
-
-/** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
-$url = 'https://api.twitter.com/1.1/blocks/create.json';
-$requestMethod = 'POST';
-
-/** POST fields required by the URL above. See relevant docs as above **/
-$postfields = array(
-    'screen_name' => 'usernameToBlock', 
-    'skip_status' => '1'
-);
-
-/** Perform a POST request and echo the response **/
-// $twitter = new TwitterAPIExchange($settings);
-// echo $twitter->buildOauth($url, $requestMethod)
-//              ->setPostfields($postfields)
-//              ->performRequest();
-
-/** Perform a GET request and echo the response **/
-/** Note: Set the GET field BEFORE calling buildOauth(); **/
-$url = 'https://api.twitter.com/1.1/search/tweets.json';
-$getfield = '?q=#unc&count=100';
-$requestMethod = 'GET';
-$twitter = new TwitterAPIExchange($settings);
-
-$tweetData = json_decode($twitter->setGetfield($getfield)
-             ->buildOauth($url, $requestMethod)
-             ->performRequest(), $assoc=TRUE);
-
-?>
 <body>
-   
+
+<ul id="menu">
+    <li data-menuanchor="firstPage" class="active"><a href="#info-slider">First section</a></li>
+    <li data-menuanchor="secondPage"><a href="#twitter-api">Second section</a></li>
+    <li data-menuanchor="3rdPage"><a href="#trump-google-maps">Third section</a></li>
+    <li data-menuanchor="4thpage"><a href="#nytimes-api">Fourth section</a></li>
+</ul>
+
+<div id="fullpage">
+    <div id="info-slider" class="section">
+        <div class="slide"> <p>Slide 1 </p></div>
+        <div class="slide"> Slide 2 </div>
+        <div class="slide"> Slide 3 </div>
+        <div class="slide"> Slide 4 </div>
+        <p>Some section</p>
+    </div>
+    <div id="twitter-api" class="section">
+
+        <?php
+        ini_set('display_errors', 1); //set this to 0 in public
+        require_once('TwitterAPIExchange.php');
+
+        /** Set access tokens here - see: https://dev.twitter.com/apps/ **/
+        $settings = array(
+            'oauth_access_token' => "1738158084-Hdus8owFL6OHb0qkQ4aBrGjKAus5X269VknbGlM",
+            'oauth_access_token_secret' => "uVEcl6go5FDGJThAx371W1pgt9LGPSTqh35jKMAt0D9Al",
+            'consumer_key' => "6njXWGA0JLyOHaPVoroegriLY",
+            'consumer_secret' => "EB0d5XrGiYLS9t4bYI6WSv3GesKKjgMDpD4cw0SrNOetZmi8b5"
+        );
+
+        /** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
+        $url = 'https://api.twitter.com/1.1/blocks/create.json';
+        $requestMethod = 'POST';
+
+        /** POST fields required by the URL above. See relevant docs as above **/
+        $postfields = array(
+            'screen_name' => 'usernameToBlock', 
+            'skip_status' => '1'
+        );
+
+        /** Perform a POST request and echo the response **/
+        // $twitter = new TwitterAPIExchange($settings);
+        // echo $twitter->buildOauth($url, $requestMethod)
+        //              ->setPostfields($postfields)
+        //              ->performRequest();
+
+        /** Perform a GET request and echo the response **/
+        /** Note: Set the GET field BEFORE calling buildOauth(); **/
+        $url = 'https://api.twitter.com/1.1/search/tweets.json';
+        $getfield = '?q=#unc&count=100';
+        $requestMethod = 'GET';
+        $twitter = new TwitterAPIExchange($settings);
+
+        $tweetData = json_decode($twitter->setGetfield($getfield)
+                     ->buildOauth($url, $requestMethod)
+                     ->performRequest(), $assoc=TRUE);
+
+        ?>
+
+        <? foreach ($tweetData['statuses'] as $index => $items) {
+            // echo $items;
+            $userArray = $items['user'];
+            $tweetEntities = $items['entities'];
+            ?>
+            <div class="twitter-tweet"> 
+                <a href="<?php echo 'https://twitter.com/' . $userArray['screen_name'];?>"><img src="<?php echo $userArray['profile_image_url_https']; ?>"></a>
+                    <a href="<?php echo 'https://twitter.com/' . $userArray['screen_name']; ?>"> <span><?php echo $userArray['screen_name']; ?></a>
+                    <p>Number of followers: <strong><?php echo (string) $userArray['followers_count']; ?></strong> </p>
+                    <p><?php echo $items['text']; ?></p>
+                    <?php 
+                        //echo "<pre>";
+                          //  var_dump($tweetEntities); 
+                        //echo "</pre>";   
+                    ?>             
+                    <img src="<?php echo $tweetEntities['media'][0]['media_url_https']; ?>">
+                    <p><?php echo $items['created_at']; ?></p>
+                    </span>
+            </div>
+        <?php
+        // echo $items['text'];
+        } ?>
+    </div>
+    <div id="trump-google-maps" class="section">
+        <h1>Trump</h1>
+        <h1>Trump</h1>
+
+        <h1>Trump</h1>
+
+        <h1>Trump</h1>
 
 
-<? foreach ($tweetData['statuses'] as $index => $items) {
-    // echo $items;
-    $userArray = $items['user'];
-    $tweetEntities = $items['entities'];
-    ?>
-    <?php echo "hy"; ?>
-    <div class="twitter-tweet"> 
-        <a href="<?php echo 'https://twitter.com/' . $userArray['screen_name'];?>"><img src="<?php echo $userArray['profile_image_url_https']; ?>"></a>
-            <!-- <div style="float: right"> -->
-                <a href="<?php echo 'https://twitter.com/' . $userArray['screen_name']; ?>"> <span><?php echo $userArray['screen_name']; ?></a>
-                <p>Number of followers: <strong><?php echo (string) $userArray['followers_count']; ?></strong> </p>
-                <p><?php echo $items['text']; ?></p>
-                <?php 
-                    echo "<pre>";
-                                        var_dump($tweetEntities); 
-                                    echo "</pre>";   
-                ?>             
-                <img src="<?php echo $tweetEntities['media'][0]['media_url_https']; ?>">
-                <p><?php echo $items['created_at']; ?></p>
-                </span>
-            <!-- </div> -->
+    </div>
+    <div id="nytimes-api" class="section" id="twitter-api">
+        <h1>TRUMP</h1>
+        <h1>Trump</h1>
+
+
+        <h1>Trump</h1>
+        <h1>Trump</h1>
+        
     </div>
 
-
- <?php
-        // echo $items['text'];
-}
-
-?>   
+ 
+</div> <!-- end #fullpage -->
 
  <!-- Bootstrap core JavaScript
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.js"></script>
     <script src="js/script.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->

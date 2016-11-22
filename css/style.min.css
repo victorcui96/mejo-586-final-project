@@ -1,0 +1,1 @@
+#menu{display:inline;position:fixed;top:0;left:0;height:40px;z-index:70;width:100%}#menu li{background:rgba(255,255,255,0.5);border-radius:10px;list-style-type:none;display:inline-block;border:thin solid grey;margin:10px;padding:10px}#menu li a{padding:10px 10px;color:black}#menu li.active{background:rgba(0,0,0,0.5);color:white}
