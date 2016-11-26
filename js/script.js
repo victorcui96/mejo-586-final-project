@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    "use strict";
     $('#fullpage').fullpage({
         //Navigation
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
