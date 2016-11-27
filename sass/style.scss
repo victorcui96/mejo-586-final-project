@@ -1,29 +1,104 @@
+// Google fonts
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Gentium+Book+Basic');
+$alfa: 'Alfa Slab One',
+cursive;
+$gentium: 'Gentium Book Basic',
+serif;
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $alfa;
+}
+
+p {
+    font-family: $gentium;
+}
+
+// Global helper classes
+.center {
+    text-align: center;
+}
+
+#fp-nav {
+    top: 25%;
+    ul {
+        li {
+            display: block;
+            height: 10px;
+            width: 10px;
+            margin: 20px 0;
+        }
+    }
+}
+
+.fp-controlArrow {
+    &.fp-prev,
+    &.fp-next {
+        // border-width: 28px 33px 27.5px 0;
+    }
+}
+.fp-slidesNav {
+    ul {
+        li {
+            a {
+                span {
+                    background: white;
+                }
+            }
+        }
+    }
+} 
+
 #menu {
-    display: inline;
+    display: block;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 10%;
     height: 40px;
     z-index: 70;
     width: 100%;
     li {
-        background: rgba(255, 255, 255, .5);
-        border-radius: 10px;
+        &:hover {
+            transform: scale(1.5);
+        }
+        background: black;
+        border-radius: 15px;
+        height: 7px;
         list-style-type: none;
-        display: inline-block;
-        border: thin solid grey;
-        margin: 10px;
-        padding: 10px;
+        display: block;
+        margin: 20px 0;
+        padding: 4px;
+        position: relative;
+        transition: 0.2s ease-out;
+        width: 7px;
         a {
-            padding: 10px 10px;
             color: black;
+            cursor: pointer;
+            top: -5px;
+            left: 0px;
+            padding: 10px 10px;
+            position: absolute;
+            text-decoration: none;
         }
         &.active {
-            background: rgba(0, 0, 0, .5);
+            background: black;
             color: white;
+            transform: scale(2.0);
             a {
-            	color: white;
+                color: white;
             }
+        }
+    }
+}
+#info-slider {
+    .obama-slider {
+        .slide-content {
+            border: 2px solid black;
+            width: 80%;
+            margin: 0 auto;
         }
     }
 }

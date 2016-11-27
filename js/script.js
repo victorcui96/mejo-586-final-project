@@ -4,9 +4,13 @@ $(document).ready(function() {
         //Navigation
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
+        // slidesNavigation: true,
+        // slidesNavPosition: bottom,
 
         // Scrolling
         css3: true,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
 
         //Design
         controlArrows: true,
@@ -16,9 +20,11 @@ $(document).ready(function() {
         paddingBottom: '10px',
         responsiveWidth: 0,
         responsiveHeight: 0,
-        responsiveSlides: true,
+        // responsiveSlides: true,
+        slidesNavigation: true,
 
         //Custom selectors
         lazyLoading: true
     });
+
 });

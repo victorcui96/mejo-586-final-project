@@ -1,19 +1,42 @@
 <?php require_once('header.php'); ?>
 <body>
-<ul id="menu">
-    <li data-menuanchor="firstPage" class="active"><a href="#info-slider">First section</a></li>
-    <li data-menuanchor="secondPage"><a href="#twitter-api">Second section</a></li>
-    <li data-menuanchor="3rdPage"><a href="#trump-google-maps">Third section</a></li>
-    <li data-menuanchor="4thpage"><a href="#nytimes-api">Fourth section</a></li>
-</ul>
+<div id="fp-nav" class="right">
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#info-slider"></a></li>
+        <li data-menuanchor="secondPage"><a href="#twitter-api"></a></li>
+        <li data-menuanchor="3rdPage"><a href="#trump-google-maps"></a></li>
+        <li data-menuanchor="4thpage"><a href="#nytimes-api"></a></li>
+    </ul>
+</div>
 
 <div id="fullpage">
     <div id="info-slider" class="section">
-        <div class="slide"> <p>Slide 1 </p></div>
-        <div class="slide"> Slide 2 </div>
-        <div class="slide"> Slide 3 </div>
-        <div class="slide"> Slide 4 </div>
-        <p>Some section</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="center">All About Obamacare</h1>
+                    <h4 class="center">What it is, Pros and Cons, and its future</h4>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="obama-slider">
+                        <div class="intro slide center">
+                            <div class="slide-content">
+                                <h5>What is Obamacare?</h5>
+                                <p>lorem</p>
+                            </div>
+                        </div>
+                        <div class="timeline slide"></div>
+                        <div class="pros-and-cons slide"></div>
+                        <div class="sources slide"></div>
+                        <ul class="slick-dots"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div id="twitter-api" class="section">
 
@@ -111,6 +134,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.js"></script>
+    <!-- Slick slider -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/ny-times-api.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
