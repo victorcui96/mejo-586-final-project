@@ -18,11 +18,22 @@ p {
     font-family: $gentium;
 }
 
+ul {
+    li {
+        list-style-type: none;
+    }
+}
+
 // Global helper classes
 .center {
     text-align: center;
 }
 
+.gentium {
+    font-family: $gentium;
+}
+
+// Customize fullPage.js elements
 #fp-nav {
     top: 25%;
     ul {
@@ -36,12 +47,17 @@ p {
 }
 
 .fp-controlArrow {
+    top: 20%;
     &.fp-prev,
     &.fp-next {
         // border-width: 28px 33px 27.5px 0;
     }
 }
+
 .fp-slidesNav {
+    &.bottom {
+        bottom: 16%;
+    }
     ul {
         li {
             a {
@@ -51,8 +67,17 @@ p {
             }
         }
     }
-} 
+}
 
+.fp-tableCell {
+    display: block;
+}
+
+.fa {
+    position: relative;
+}
+
+// Obamacare slider
 #menu {
     display: block;
     position: fixed;
@@ -93,12 +118,75 @@ p {
         }
     }
 }
+
 #info-slider {
+    .obamacare-intro {
+        h1 {
+            padding-bottom: 30px;
+        }
+        img {
+            max-height: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 3px;
+        }
+    }
     .obama-slider {
         .slide-content {
-            border: 2px solid black;
-            width: 80%;
+            // border: 2px solid black;
+            // width: 80%;
             margin: 0 auto;
+            padding: 20px 15px 15px 0;
+            p {
+                padding: 5px 25px;
+            }
+            ul {
+                li {
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    i {
+                        padding-right: 5px;
+                        span {
+                            left: 5px;
+                            position: absolute;
+                            top: -1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Twitter Tweets
+.twitter-tweets {
+    background: whitesmoke;
+    max-height: 600px;
+    margin: 0 auto;
+    width: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    .tweet {
+        padding: 0 20px;
+        .profile-pic {
+            border-radius: 3px;
+            float: left;
+        }
+        .user-names {
+            p {
+                font-weight: bolder;
+                margin-bottom: 0;
+            }
+            a {
+                color: #FFAF79;
+            }
+        }
+        .tweet-text {
+            p {
+                padding-top: 10px;
+            }
         }
     }
 }

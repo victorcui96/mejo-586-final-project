@@ -1,6 +1,8 @@
 $(document).ready(function() {
     "use strict";
     $('#fullpage').fullpage({
+        afterRender: function() {
+        },
         //Navigation
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
@@ -26,5 +28,13 @@ $(document).ready(function() {
         //Custom selectors
         lazyLoading: true
     });
+    var wow = new WOW({
+        mobile: false // default
+    });
+    wow.init();
+
+
+
+
 
 });
