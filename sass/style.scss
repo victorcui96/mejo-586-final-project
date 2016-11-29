@@ -14,7 +14,8 @@ h6 {
     font-family: $alfa;
 }
 
-p {
+p,
+span {
     font-family: $gentium;
 }
 
@@ -24,9 +25,15 @@ ul {
     }
 }
 
+// Colors
+$orange: #FFAF79;
 // Global helper classes
 .center {
     text-align: center;
+}
+
+.block {
+    display: block;
 }
 
 .gentium {
@@ -186,6 +193,30 @@ ul {
         .tweet-text {
             p {
                 padding-top: 10px;
+            }
+        }
+    }
+}
+
+// NY Times
+#nytimes-api {
+    .articles-container {
+        .one-article {
+            .headline {
+                a {
+                    transition: 0.3s ease-out;
+                    text-decoration: none;
+                    &:hover {
+                        color: #67D2D9;
+                    }
+                }
+            }
+            .author-and-date {
+                span {
+                    font-weight: bold;
+                    font-size: 115%;
+                    // display: inline;
+                }
             }
         }
     }

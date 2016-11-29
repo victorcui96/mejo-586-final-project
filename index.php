@@ -123,7 +123,7 @@
                             // echo $items;
                             $userArray = $items['user'];
                             $tweetEntities = $items['entities'];
-                            print_r($tweetEntities);
+                            // print_r($tweetEntities);
                             ?>
                             <div class="tweet">
                                 <div class="row">
@@ -146,12 +146,14 @@
                                                  //echo "<pre>";
                                                    //  var_dump($tweetEntities); 
                                                  //echo "</pre>";   
-                                             ?>             
+                                             ?> 
+                                         <!-- Fix line below -->
+                                         <!-- TODO: FIND how to get the multimedia attachement from a Tweet -->
                                          <img src="<?php echo $tweetEntities['media'][0]['media_url_https']; ?>">
                                          <p><?php echo $items['created_at']; ?></p>
                                          </span>
                                          <p>Followers: <strong><?php echo (string) $userArray['followers_count']; ?></strong> </p>
-                                    </div>
+                                </div>
                                 </div>
                             <hr>
                             </div>  <!-- End 'tweet' container -->
@@ -186,8 +188,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h1 class="center">Latest NY Times Articles about Obamacare</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                      <div class="articles-container">
-                
+                    
                     </div>
                 </div>
             </div>
