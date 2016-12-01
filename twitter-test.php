@@ -56,9 +56,9 @@
                             $userArray = $items['user'];
                             $tweetEntities = $items['entities'];
                             $retweetStatus = $items['retweeted_status'];
-                            echo "<pre>";
-                                var_dump($userArray['location']);
-                            echo "</pre>";
+                            // echo "<pre>";
+                            //     var_dump($userArray['location']);
+                            // echo "</pre>";
                             // echo "<pre>";
                             //     var_dump($retweetStatus['user']['entities']);
                             // echo "</pre>";
@@ -88,7 +88,12 @@
                                              //echo "<pre>";
                                                //  var_dump($tweetEntities); 
                                              //echo "</pre>";   
-                                         ?>             
+                                         ?>
+                                      <?php
+                                                       echo "<pre>";
+                                                            var_dump($tweetEntities['media'][0]['media_url_https']);
+                                                        echo "</pre>"; 
+                                                   ?>             
                                      <img src="<?php echo $tweetEntities['media'][0]['media_url_https']; ?>">
                                      <p><?php echo $items['created_at']; ?></p>
                                      </span>
@@ -99,9 +104,10 @@
                             </div>  <!-- End 'tweet' container -->
                         <?php
                         } ?>
-                        <script type="text/javascript">
+                        <script type="text/javascript" src="js/tweetLinkIt.js"> </script>
+                        <script>
                             function pageComplete(){
-                                    $('.tweet').tweetLinkify();
+                                    $('.tweet-text').tweetLinkify();
                             }
                         </script>
                         <?php

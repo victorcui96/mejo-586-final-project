@@ -1,8 +1,7 @@
 $(document).ready(function() {
     "use strict";
     $('#fullpage').fullpage({
-        afterRender: function() {
-        },
+        afterRender: function() {},
         //Navigation
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
@@ -17,7 +16,7 @@ $(document).ready(function() {
         //Design
         controlArrows: true,
         verticalCentered: true,
-        sectionsColor: ['#93F9FF', '#FFAF79', '#67D2D9', 'whitesmoke'],
+        sectionsColor: ['#93F9FF', '#FFAF79', 'white', 'whitesmoke'],
         paddingTop: '3em',
         paddingBottom: '10px',
         responsiveWidth: 0,
@@ -32,6 +31,10 @@ $(document).ready(function() {
         mobile: false // default
     });
     wow.init();
+
+    
+
+    
 
 
 

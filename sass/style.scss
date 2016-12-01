@@ -27,6 +27,11 @@ ul {
 
 // Colors
 $orange: #FFAF79;
+// Global styling
+html {
+    overflow-y: scroll;
+}
+
 // Global helper classes
 .center {
     text-align: center;
@@ -176,7 +181,13 @@ $orange: #FFAF79;
     overflow-x: hidden;
     overflow-y: scroll;
     .tweet {
+        border-bottom: 1px ridge $orange;
         padding: 0 20px;
+        padding-top: 15px;
+        transition: 0.3s ease-out;
+        &:hover {
+            background: #fff2e6;
+        }
         .profile-pic {
             border-radius: 3px;
             float: left;
@@ -195,7 +206,22 @@ $orange: #FFAF79;
                 padding-top: 10px;
             }
         }
+        .twitter-multimedia {
+            max-width: 350px;
+        }
+        svg {
+            margin-top: 10px;
+            max-height: 20px;
+        }
+        .tweet-created-at {
+            float: right;
+        }
     }
+}
+
+// Google Maps
+#map {
+    height: 100%;
 }
 
 // NY Times

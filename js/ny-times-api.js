@@ -11,10 +11,11 @@ var nyTimesArticleSearch = function(searchQuery) {
         method: 'GET',
     }).done(function(result) {
         var articles = result.response.docs;
-        console.log(articles);
         var html = "";
         $.each(articles, function(i, data) {
-            console.log(data.headline.main);
+            // console.log(data);
+            // console.log(data.headline.main);
+
             html += '<div class="one-article">';
             html += '<h3 class="headline">' + '<a href="' + data.web_url + '">' + data.headline.main;
             html += '</a>';
@@ -22,7 +23,9 @@ var nyTimesArticleSearch = function(searchQuery) {
             html += '<div class="author-and-date">';
             var exactDate = new Date(data.pub_date);
             var formattedDate = moment().format("dddd MMMM Do, YYYY");
-            html += '<span>' + data.byline.original + '     |    '    + '</span>' + '<span>' + 'Tyspane: ' + data.section_name + '     |     ' + '</span>' + '<span>' + formattedDate + '</span>';
+            if (data.byline) {
+                html += '<span>' + data.byline.original + '     |    ' + '</span>' + '<span>' + 'Tyspane: ' + data.section_name + '     |     ' + '</span>' + '<span>' + formattedDate + '</span>';
+            }
             html += '<h4 class="gentium">' + data.snippet + '</h4>';
             html += '</div>';
             html += '</div>';

@@ -1,4 +1,7 @@
 <?php ini_set('display_errors', 1); //set this to 0 in public ?>
+<!-- set the default timezone to use. -->
+<?php date_default_timezone_set('America/New_York'); ?>
+
 <?php require_once('header.php'); ?>
 <body>
 <div id="fp-nav" class="right">
@@ -82,15 +85,7 @@
             'consumer_secret' => "EB0d5XrGiYLS9t4bYI6WSv3GesKKjgMDpD4cw0SrNOetZmi8b5"
         );
 
-        /** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
-        $url = 'https://api.twitter.com/1.1/blocks/create.json';
-        $requestMethod = 'POST';
-
-        /** POST fields required by the URL above. See relevant docs as above **/
-        $postfields = array(
-            'screen_name' => 'usernameToBlock', 
-            'skip_status' => '1'
-        );
+       
 
         /** Perform a POST request and echo the response **/
         // $twitter = new TwitterAPIExchange($settings);
@@ -120,21 +115,24 @@
                 <div class="col-md-12">
                     <div class="twitter-tweets">
                         <? foreach ($tweetData['statuses'] as $index => $items) {
-                            // echo $items;
                             $userArray = $items['user'];
                             $tweetEntities = $items['entities'];
-                            // print_r($tweetEntities);
                             ?>
                             <div class="tweet">
                                 <div class="row">
                                     <div class="col-xs-1">
                                        <img src="<?php echo $userArray['profile_image_url_https']; ?>" class="profile-pic">
                                     </div>
-                                    <div class="col-xs-11"> 
+                                    <div class="col-xs-9"> 
                                         <div class="user-names">
                                             <p><?php echo $userArray['name']; ?></p>
-                                            <a href="<?php echo 'https://twitter.c1m/' . $userArray['screen_name']; ?>"> <span><?php echo "@" . $userArray['screen_name']; ?></a>
+                                            <a href="<?php echo 'https://twitter.com/' . $userArray['screen_name']; ?>"> <span><?php echo "@" . $userArray['screen_name']; ?></a>
+                                           
                                         </div>
+
+                                    </div>
+                                    <div class="col-xs-2">
+                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Logo: Twitter</title><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/></svg>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -142,45 +140,42 @@
                                         <div class="tweet-text">
                                              <p><?php echo $items['text']; ?></p>
                                          </div>
-                                             <?php 
-                                                 //echo "<pre>";
-                                                   //  var_dump($tweetEntities); 
-                                                 //echo "</pre>";   
-                                             ?> 
-                                         <!-- Fix line below -->
-                                         <!-- TODO: FIND how to get the multimedia attachement from a Tweet -->
-                                         <img src="<?php echo $tweetEntities['media'][0]['media_url_https']; ?>">
-                                         <p><?php echo $items['created_at']; ?></p>
-                                         </span>
+                                         <?php
+                                             if (isset($tweetEntities['media'])) { ?>
+                                                <img class="twitter-multimedia" src="<?php echo $tweetEntities['media'][0]['media_url_https']; ?>">
+                                        <?php   }  ?>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                         
                                          <p>Followers: <strong><?php echo (string) $userArray['followers_count']; ?></strong> </p>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <p class="tweet-created-at"><?php echo date('Y-m-d g a e', strtotime($items['created_at'])); ?></p>
+                                    </div>
                                 </div>
-                                </div>
-                            <hr>
                             </div>  <!-- End 'tweet' container -->
                         <?php
                         } ?>
-                        <!-- TOOD: FIGURE this out -->
-                        <!-- <script type="text/javascript" src="js/tweetLinkIt.js"></script>
+                        <script type="text/javascript" src="js/tweetLinkIt.js"></script>
                         <script type="text/javascript">
                             function pageComplete(){
-                                    $('.tweet').tweetLinkify();
+                                    $('.tweet-text').tweetLinkify();
                             }
                         </script>
                         <?php
                             echo "<script> pageComplete();</script>;" 
-                        ?> -->
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="trump-google-maps" class="section">
-        <h1>Trump</h1>
-        <h1>Trump</h1>
 
-        <h1>Trump</h1>
-
-        <h1>Trump</h1>
+        <div id="map"></div>
 
 
     </div>
