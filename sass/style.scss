@@ -27,6 +27,12 @@ ul {
 
 // Colors
 $orange: #FFAF79;
+// Breakpoints
+$screen-xs: 320px;
+$screen-sm: 480px;
+$screen-md: 768px;
+$sreeen-lg: 1280px;
+$screen-xlg: 1824px;
 // Global styling
 html {
     overflow-y: scroll;
@@ -153,6 +159,9 @@ html {
                 padding: 5px 25px;
             }
             ul {
+                @media screen and (max-width: $screen-sm) {
+                    display: none;
+                }
                 li {
                     float: left;
                     padding-left: 20px;
@@ -176,6 +185,9 @@ html {
 .twitter-tweets {
     background: whitesmoke;
     max-height: 600px;
+    @media screen and (min-width: $screen-xlg) {
+        max-height: 800px;
+    }
     margin: 0 auto;
     width: 70%;
     overflow-x: hidden;
@@ -185,6 +197,11 @@ html {
         padding: 0 20px;
         padding-top: 15px;
         transition: 0.3s ease-out;
+        .mobile-hidden {
+            @media screen and (max-width: $screen-xs) {
+                display: none;
+            }
+        }
         &:hover {
             background: #fff2e6;
         }
@@ -219,16 +236,32 @@ html {
     }
 }
 
-// Google Maps
-#map {
-    height: 100%;
+#trump-google-maps {
+    padding-top: 1.0em !important;
+    .center {
+        margin-top: 0;
+        padding: 0;
+    }
+    // Google Maps
+    #map {
+        height: 100%;
+    }
 }
 
 // NY Times
 #nytimes-api {
+    h1 {
+        font-family: cursive;
+        font-weight: bolder;
+    }
     .articles-container {
+        max-height: 600px;
+        overflow-x: hidden;
+        overflow-y: scroll;
         .one-article {
+        border-bottom: 1px ridge #337ab7;
             .headline {
+                font-size: 135%;
                 a {
                     transition: 0.3s ease-out;
                     text-decoration: none;
@@ -242,6 +275,12 @@ html {
                     font-weight: bold;
                     font-size: 115%;
                     // display: inline;
+                    &:first-child {
+                        color: #999;
+                    }
+                }
+                p {
+                    font-size: 115%;
                 }
             }
         }

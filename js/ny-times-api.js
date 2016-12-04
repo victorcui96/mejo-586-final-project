@@ -13,8 +13,6 @@ var nyTimesArticleSearch = function(searchQuery) {
         var articles = result.response.docs;
         var html = "";
         $.each(articles, function(i, data) {
-            // console.log(data);
-            // console.log(data.headline.main);
 
             html += '<div class="one-article">';
             html += '<h3 class="headline">' + '<a href="' + data.web_url + '">' + data.headline.main;
@@ -24,10 +22,11 @@ var nyTimesArticleSearch = function(searchQuery) {
             var exactDate = new Date(data.pub_date);
             var formattedDate = moment().format("dddd MMMM Do, YYYY");
             if (data.byline) {
-                html += '<span>' + data.byline.original + '     |    ' + '</span>' + '<span>' + 'Tyspane: ' + data.section_name + '     |     ' + '</span>' + '<span>' + formattedDate + '</span>';
+                html += '<span>' + data.byline.original + '     |    ' + '</span>' + '<span>' + 'Type: ' + data.section_name + '     |     ' + '</span>' + '<span>' + formattedDate + '</span>';
             }
-            html += '<h4 class="gentium">' + data.snippet + '</h4>';
+            html += '<p class="gentium">' + data.snippet + '</p>';
             html += '</div>';
+            html += '<hr>';
             html += '</div>';
         });
         $articlesContainer = $('.articles-container');

@@ -16,7 +16,7 @@ $(document).ready(function() {
         //Design
         controlArrows: true,
         verticalCentered: true,
-        sectionsColor: ['#93F9FF', '#FFAF79', 'white', 'whitesmoke'],
+        sectionsColor: ['#93F9FF', '#FFAF79', 'whitesmoke', 'whitesmoke'],
         paddingTop: '3em',
         paddingBottom: '10px',
         responsiveWidth: 0,

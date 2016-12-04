@@ -146,8 +146,8 @@
                                         <?php   }  ?>
                                         
                                     </div>
-                                </div>
-                                <div class="row">
+                            </div>
+                                <div class="row mobile-hidden">
                                     <div class="col-xs-4">
                                          
                                          <p>Followers: <strong><?php echo (string) $userArray['followers_count']; ?></strong> </p>
@@ -174,12 +174,12 @@
         </div>
     </div>
     <div id="trump-google-maps" class="section">
-
+        <h3 class="center">Key events related to Obamacare</h3>
         <div id="map"></div>
 
 
     </div>
-    <div id="nytimes-api" class="section" id="twitter-api">
+    <div id="nytimes-api" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -189,7 +189,7 @@
             <div class="row">
                 <div class="col-md-12">
                      <div class="articles-container">
-                    
+                        
                     </div>
                 </div>
             </div>
