@@ -26,7 +26,6 @@ var nyTimesArticleSearch = function(searchQuery) {
             }
             html += '<p class="gentium">' + data.snippet + '</p>';
             html += '</div>';
-            html += '<hr>';
             html += '</div>';
         });
         $articlesContainer = $('.articles-container');

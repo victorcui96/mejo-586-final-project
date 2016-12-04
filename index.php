@@ -6,14 +6,31 @@
 <body>
 <div id="fp-nav" class="right">
     <ul id="menu">
-        <li data-menuanchor="firstPage" class="active"><a href="#info-slider"></a></li>
-        <li data-menuanchor="secondPage"><a href="#twitter-api"></a></li>
-        <li data-menuanchor="3rdPage"><a href="#trump-google-maps"></a></li>
-        <li data-menuanchor="4thpage"><a href="#nytimes-api"></a></li>
+        <li data-menuanchor="firstPage" class="active"><a href="#fullscreen-obama"></a></li>
+        <li data-menuanchor="secondPage"><a href="#info-slider"></a></li>
+        <li data-menuanchor="3rdPage"><a href="#twitter-api"></a></li>
+        <li data-menuanchor="4thpage"><a href="#trump-google-maps"></a></li>
+        <li data-menuanchor="lastpage"><a href="#nytimes-api"></a></li>
     </ul>
 </div>
 
 <div id="fullpage">
+    <div id="fullscreen-obama" class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <img src="images/obama-face.jpg" alt="obama's face" class="responsive">
+                    
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="obamacare-intro">
+                     <h1 class="">Obamacare</h1>
+                     <h3>What it is, pros and cons, and its future</h3>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="info-slider" class="section">
         <div class="container-fluid">
             <div class="row">

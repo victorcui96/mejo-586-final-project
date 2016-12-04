@@ -31,7 +31,7 @@ $orange: #FFAF79;
 $screen-xs: 320px;
 $screen-sm: 480px;
 $screen-md: 768px;
-$sreeen-lg: 1280px;
+$screen-lg: 1280px;
 $screen-xlg: 1824px;
 // Global styling
 html {
@@ -93,6 +93,26 @@ html {
 
 .fa {
     position: relative;
+}
+
+// Full-screen Obama
+#fullscreen-obama {
+    img {
+        @media screen and (min-width: $screen-md) {
+            display: inline-block;
+        }
+        margin: 0 auto;
+        display: block;
+        height: 100%;
+        width: 65%;
+    }
+    .obamacare-intro {
+        padding-top: 20%;
+        text-align: center;
+        @media screen and (min-width: $screen-lg) {
+            padding-top: 50%;
+        }
+    }
 }
 
 // Obamacare slider
@@ -259,7 +279,7 @@ html {
         overflow-x: hidden;
         overflow-y: scroll;
         .one-article {
-        border-bottom: 1px ridge #337ab7;
+            border-bottom: 1px ridge #337ab7;
             .headline {
                 font-size: 135%;
                 a {
