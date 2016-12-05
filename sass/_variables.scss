@@ -1,0 +1,23 @@
+// Google fonts
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Gentium+Book+Basic');
+$alfa: 'Alfa Slab One',
+cursive;
+$gentium: 'Gentium Book Basic',
+serif;
+// Colors
+$orange: #FFAF79;
+// Breakpoints
+$screen-xs: 320px;
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 1280px;
+$screen-xlg: 1824px;
+// Clearfix hack
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}

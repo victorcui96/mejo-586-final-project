@@ -1,308 +1,361 @@
-// Google fonts
-@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Gentium+Book+Basic');
-$alfa: 'Alfa Slab One',
-cursive;
-$gentium: 'Gentium Book Basic',
-serif;
-// Typography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $alfa;
-}
-
-p,
-span {
-    font-family: $gentium;
-}
-
-ul {
+    // import _variables.scss file
+    @import "variables";
+    // Typography
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $alfa;
+    }
+    
+    p,
+    span,
     li {
-        list-style-type: none;
+        font-family: $gentium;
     }
-}
-
-// Colors
-$orange: #FFAF79;
-// Breakpoints
-$screen-xs: 320px;
-$screen-sm: 480px;
-$screen-md: 768px;
-$screen-lg: 1280px;
-$screen-xlg: 1824px;
-// Global styling
-html {
-    overflow-y: scroll;
-}
-
-// Global helper classes
-.center {
-    text-align: center;
-}
-
-.block {
-    display: block;
-}
-
-.gentium {
-    font-family: $gentium;
-}
-
-// Customize fullPage.js elements
-#fp-nav {
-    top: 25%;
+    
     ul {
         li {
-            display: block;
-            height: 10px;
-            width: 10px;
-            margin: 20px 0;
+            list-style-type: none;
         }
     }
-}
-
-.fp-controlArrow {
-    top: 20%;
-    &.fp-prev,
-    &.fp-next {
-        // border-width: 28px 33px 27.5px 0;
+    /* IE6 */
+    
+    * html .clearfix {
+        zoom: 1;
     }
-}
-
-.fp-slidesNav {
-    &.bottom {
-        bottom: 16%;
+    /* IE7 */
+    
+    *:first-child+html .clearfix {
+        zoom: 1;
     }
-    ul {
-        li {
-            a {
-                span {
-                    background: white;
-                }
-            }
-        }
+    
+    // Global styling
+    html {
+        overflow-y: scroll;
     }
-}
-
-.fp-tableCell {
-    display: block;
-}
-
-.fa {
-    position: relative;
-}
-
-// Full-screen Obama
-#fullscreen-obama {
-    img {
-        @media screen and (min-width: $screen-md) {
-            display: inline-block;
-        }
-        margin: 0 auto;
-        display: block;
-        height: 100%;
-        width: 65%;
+    
+    a {
+        transition: 0.3s ease-out;
+        text-decoration: none !important;
     }
-    .obamacare-intro {
-        padding-top: 20%;
+    
+    // Global helper classes
+    .center {
         text-align: center;
-        @media screen and (min-width: $screen-lg) {
-            padding-top: 50%;
-        }
     }
-}
-
-// Obamacare slider
-#menu {
-    display: block;
-    position: fixed;
-    top: 10%;
-    height: 40px;
-    z-index: 70;
-    width: 100%;
-    li {
-        &:hover {
-            transform: scale(1.5);
-        }
-        background: black;
-        border-radius: 15px;
-        height: 7px;
-        list-style-type: none;
+    
+    .block {
         display: block;
-        margin: 20px 0;
-        padding: 4px;
-        position: relative;
-        transition: 0.2s ease-out;
-        width: 7px;
-        a {
-            color: black;
-            cursor: pointer;
-            top: -5px;
-            left: 0px;
-            padding: 10px 10px;
-            position: absolute;
-            text-decoration: none;
-        }
-        &.active {
-            background: black;
-            color: white;
-            transform: scale(2.0);
-            a {
-                color: white;
+    }
+    
+    .gentium {
+        font-family: $gentium;
+    }
+    
+    // Customize fullPage.js elements
+    #fp-nav {
+        top: 25%;
+        ul {
+            li {
+                display: block;
+                height: 10px;
+                width: 10px;
+                margin: 20px 0;
             }
         }
     }
-}
-
-#info-slider {
-    .obamacare-intro {
-        h1 {
-            padding-bottom: 30px;
+    
+    .fp-controlArrow {
+        top: 20%;
+        @media screen and (min-width: $screen-md) {
+            top: 42%;
         }
-        img {
-            max-height: 150px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 3px;
+        &.fp-prev,
+        &.fp-next {
+            // border-width: 28px 33px 27.5px 0;
         }
     }
-    .obama-slider {
-        .slide-content {
-            // border: 2px solid black;
-            // width: 80%;
-            margin: 0 auto;
-            padding: 20px 15px 15px 0;
-            p {
-                padding: 5px 25px;
-            }
-            ul {
-                @media screen and (max-width: $screen-sm) {
-                    display: none;
-                }
-                li {
-                    float: left;
-                    padding-left: 20px;
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                    i {
-                        padding-right: 5px;
-                        span {
-                            left: 5px;
-                            position: absolute;
-                            top: -1px;
-                        }
+    
+    .fp-slidesNav {
+        &.bottom {
+            bottom: 16%;
+        }
+        ul {
+            li {
+                a {
+                    span {
+                        background: white;
                     }
                 }
             }
         }
     }
-}
-
-// Twitter Tweets
-.twitter-tweets {
-    background: whitesmoke;
-    max-height: 600px;
-    @media screen and (min-width: $screen-xlg) {
-        max-height: 800px;
+    
+    .fp-tableCell {
+        display: block;
     }
-    margin: 0 auto;
-    width: 70%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    .tweet {
-        border-bottom: 1px ridge $orange;
-        padding: 0 20px;
-        padding-top: 15px;
-        transition: 0.3s ease-out;
-        .mobile-hidden {
-            @media screen and (max-width: $screen-xs) {
+    
+    .fa {
+        position: relative;
+    }
+    
+    // Full-screen Obama
+    #fullscreen-obama {
+        img {
+            @media screen and (min-width: $screen-md) {
+                display: inline-block;
+            }
+            margin: 0 auto;
+            display: block;
+            height: 100%;
+            width: 65%;
+        }
+        .obamacare-intro {
+            padding-top: 20%;
+            text-align: center;
+            @media screen and (min-width: $screen-md) {
+                padding-top: 50%;
+            }
+        }
+    }
+    
+    #menu {
+        display: block;
+        position: fixed;
+        top: 10%;
+        height: 40px;
+        z-index: 70;
+        width: 100%;
+        li {
+            &:hover {
+                transform: scale(1.5);
+            }
+            background: black;
+            border-radius: 15px;
+            height: 7px;
+            list-style-type: none;
+            display: block;
+            margin: 20px 0;
+            padding: 4px;
+            position: relative;
+            transition: 0.2s ease-out;
+            width: 7px;
+            a {
+                color: black;
+                cursor: pointer;
+                top: -5px;
+                left: 0px;
+                padding: 10px 10px;
+                position: absolute;
+                text-decoration: none;
+            }
+            &.active {
+                background: black;
+                color: white;
+                transform: scale(2.0);
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+    
+    // Obamacare slider
+    #info-slider {
+        .mobile-view {
+            @media screen and (min-width: $screen-md) {
                 display: none;
             }
         }
-        &:hover {
-            background: #fff2e6;
-        }
-        .profile-pic {
-            border-radius: 3px;
-            float: left;
-        }
-        .user-names {
-            p {
-                font-weight: bolder;
-                margin-bottom: 0;
+        .obama-slider {
+            display: none;
+            @media screen and (min-width: $screen-md) {
+                display: block;
             }
-            a {
-                color: #FFAF79;
+            .slide-content {
+                // border: 2px solid black;
+                // width: 80%;
+                @media screen and (min-width: $screen-lg) {
+                    top: 15%;
+                }
+                @media screen and (min-width: $screen-xlg) {
+                    top: 25%;
+                }
+                margin: 0 auto;
+                padding: 20px 15px 15px 0;
+                position: relative;
+                p {
+                    padding: 5px 25px;
+                }
+                ul {
+                    @media screen and (max-width: $screen-sm) {
+                        display: none;
+                    }
+                    li {
+                        padding: 5px 20px;
+                        @media screen and (min-width: $screen-lg) {
+                            width: 95%;
+                        }
+                        @media screen and (min-width: $screen-xlg) {
+                            width: 65%;
+                        }
+                        i {
+                            padding-right: 5px;
+                            span {
+                                left: 5px;
+                                position: absolute;
+                                top: -1px;
+                            }
+                        }
+                    }
+                }
+                &.fast-facts {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    h4 {
+                        display: inline-block;
+                    }
+                }
+                &.pros-and-cons {
+                    .col-md-6 {
+                        top: 50px;
+                        padding-left: 75px;
+                    }
+                    ul {
+                        li {
+                            font-size: 130%;
+                            // list-style-type: disc;
+                        }
+                    }
+                }
+                &.sources {
+                    a {
+                        color: #D99567;
+                        font-size: 120%;
+                    }
+                }
             }
         }
-        .tweet-text {
-            p {
-                padding-top: 10px;
-            }
-        }
-        .twitter-multimedia {
-            max-width: 350px;
-        }
-        svg {
-            margin-top: 10px;
-            max-height: 20px;
-        }
-        .tweet-created-at {
-            float: right;
-        }
     }
-}
-
-#trump-google-maps {
-    padding-top: 1.0em !important;
-    .center {
-        margin-top: 0;
-        padding: 0;
-    }
-    // Google Maps
-    #map {
-        height: 100%;
-    }
-}
-
-// NY Times
-#nytimes-api {
-    h1 {
-        font-family: cursive;
-        font-weight: bolder;
-    }
-    .articles-container {
+    
+    // Twitter Tweets
+    .twitter-tweets {
+        background: whitesmoke;
         max-height: 600px;
+        @media screen and (min-width: $screen-xlg) {
+            max-height: 800px;
+        }
+        margin: 0 auto;
+        width: 70%;
         overflow-x: hidden;
         overflow-y: scroll;
-        .one-article {
-            border-bottom: 1px ridge #337ab7;
-            .headline {
-                font-size: 135%;
-                a {
-                    transition: 0.3s ease-out;
-                    text-decoration: none;
-                    &:hover {
-                        color: #67D2D9;
-                    }
+        .tweet {
+            border-bottom: 1px ridge $orange;
+            padding: 0 20px;
+            padding-top: 15px;
+            transition: 0.3s ease-out;
+            .mobile-hidden {
+                @media screen and (max-width: $screen-md) {
+                    display: none;
                 }
             }
-            .author-and-date {
-                span {
-                    font-weight: bold;
-                    font-size: 115%;
-                    // display: inline;
-                    &:first-child {
-                        color: #999;
-                    }
+            &:hover {
+                background: #fff2e6;
+            }
+            .profile-pic {
+                border-radius: 3px;
+                float: left;
+            }
+            .user-names {
+                @media screen and (max-width: $screen-md) {
+                    padding-left: 25px;
                 }
                 p {
-                    font-size: 115%;
+                    font-weight: bolder;
+                    margin-bottom: 0;
+                }
+                a {
+                    @media screen and (max-width: $screen-md) {
+                        display: inline-block;
+                        padding-top: 10px;
+                    }
+                    color: #FFAF79;
+                }
+            }
+            .tweet-text {
+                p {
+                    padding-top: 10px;
+                }
+            }
+            .twitter-multimedia {
+                max-width: 350px;
+            }
+            svg {
+                margin-top: 10px;
+                max-height: 20px;
+            }
+            .tweet-created-at {
+                float: right;
+            }
+        }
+    }
+    
+    #trump-google-maps {
+        padding-top: 1.0em !important;
+        .center {
+            margin-top: 0;
+            padding: 0;
+        }
+        // Google Maps
+        #map {
+            height: 100%;
+        }
+    }
+    
+    // NY Times
+    #nytimes-api {
+        h1 {
+            font-family: cursive;
+            font-weight: bolder;
+        }
+        .articles-container {
+            max-height: 600px;
+            @media screen and (min-width: $screen-xlg) {
+                max-height: 800px;
+            }
+            overflow-x: hidden;
+            overflow-y: scroll;
+            .one-article {
+                border-bottom: 1px ridge #337ab7;
+                .headline {
+                    font-size: 135%;
+                    a {
+                        transition: 0.3s ease-out;
+                        text-decoration: none;
+                        &:hover {
+                            color: #67D2D9;
+                        }
+                    }
+                }
+                .author-and-date {
+                    span {
+                        font-weight: bold;
+                        font-size: 115%;
+                        // display: inline;
+                        &:first-child {
+                            color: #999;
+                        }
+                    }
+                    p {
+                        font-size: 115%;
+                    }
                 }
             }
         }
     }
-}

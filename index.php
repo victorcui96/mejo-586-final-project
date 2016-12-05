@@ -32,62 +32,129 @@
         </div>
     </div>
     <div id="info-slider" class="section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 obamacare-intro">
-                    <h1 class="center animated fadeInUpBig " data-wow-delay="1s" data-wow-duration="15s">All About Obamacare</h1>
-                    <h4 class="center gentium">What it is, Pros and Cons, and its future</h4>
-                    <img src="images/obamacare.png" alt="" class="img-responsive">
+        <div class="mobile-view">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6 col-xs-12">
+                                <h2>Pros</h2>    
+                                <ul>
+                                    <li>More Americans have health insurance</li>
+                                    <li>Health Insurance Is More Affordable for Many People</li>
+                                    <li>No Time Limits on Care</li>
+                                    <li>More Screenings Are Covered</li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <h2>Cons</h2>
+                                <ul>
+                                    <li>Many People Have to Pay Higher Premiums</li>
+                                    <li>You Can Be Fined if You Don’t Have Insurance</li>
+                                    <li>Taxes increase for the wealthy </li>
+                                    <li>Enrolling Can Be Complicated</li>
+                                </ul>
+                             </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="obama-slider">
-                        <div class="intro slide center fp-auto-height-responsive">
-                            <div class="slide-content">
-                                <h4>What is Obamacare?</h4>
-                                <ul>
+        </div>
+        <div class="obama-slider">
+            <div class="slide">
+                <h2 class="center block">Fast Facts</h2>
+                <div class="slide-content fast-facts">
+                    <ul class="clearfix">
+                        <?php
+                            for ($i = 0; $i <= 2.0; $i += 0.5) { ?>
+                                <li class="">
+                                    <i class="fa fa-circle-thin fa-2x">
+                                        <span class="number">
+                                            <?php
+                                                if ($i === 0) {
+                                                    echo "1";
+                                                }
+                                                elseif ($i === 0.5) {
+                                                    echo "2";
+                                                }
+                                                elseif ($i === 1.0) {
+                                                    echo "3";
+                                                }
+                                                elseif ($i === 1.5) {
+                                                     echo "4";
+                                                } 
+                                                else { 
+                                                    echo "5";
+                                                }
+                                            ?>
+                                        </span>
+                                    </i>
                                     <?php
-                                        for ($i = 0; $i <= 1.0; $i += 0.5) { ?>
-                                            <li class="animated fadeInLeftBig wow" data-wow-delay="<?php echo $i . 's';?>">
-                                                <i class="fa fa-circle-thin fa-2x">
-                                                    <span class="number">
-                                                        <?php
-                                                            if ($i == 0) {
-                                                                echo "1";
-                                                            }
-                                                            elseif ($i == 0.5) {
-                                                                echo "2";
-                                                            }
-                                                            else {
-                                                                echo "3";
-                                                            }
-                                                        ?>
-                                                    </span>
-                                                </i>
-                                                <?php
-                                                    if ($i == 0) {
-                                                         echo "Health care law signed by Obama in 2010. Its stated purpose is to increase the number of Americans with health insurance and decrease health care costs. ";
-                                                     } 
-                                                     elseif ($i == 0.5) {
-                                                         echo "Under Obamacare, no one can be <em>excluded</em> from health insurance, even if you're sick, and everyone <em>has</em> to have insurance. ";
-                                                     }
-                                                     else {
-                                                        echo "Most people under 65 still get their health insurance from their employer. Only affects people who buy health plans on a government-run marketplace.";
-                                                     }
-                                                ?>
-                                            </li>
-                                     <?php } ?>   
+                                        if ($i === 0) {
+                                             echo "<h4>Health care law signed by Obama in 2010. </h4>";
+                                         } 
+                                         elseif ($i === 0.5) {
+                                            echo "<h4>Its stated purpose is to increase the number of Americans with health insurance and decrease health care costs. </h4>";
+                                             
+                                         }
+                                         elseif ($i === 1.0) {
+                                             echo "<h4>Under Obamacare, no one can be <em>excluded</em> from health insurance, even if you're sick, and everyone <em>has</em> be insured. </h4>";
+                                         }
+                                         elseif ($i === 1.5) {
+                                             echo "<h4>Most people under 65 still get their health insurance from their employer. </h4>";
+                                         } else {
+                                            echo "<h4>Obamacare only affects people who buy health plans on a government-run marketplace. </h4>";
+                                         }
+                                    ?>
+                                </li>
+                         <?php } ?>   
+                    </ul>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content pros-and-cons">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Pros</h2>    
+                                <ul>
+                                    <li>More Americans have health insurance</li>
+                                    <li>Health Insurance Is More Affordable for Many People</li>
+                                    <li>No Time Limits on Care</li>
+                                    <li>More Screenings Are Covered</li>
+
                                 </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>Cons</h2>
+                                <ul>
+                                    <li>Many People Have to Pay Higher Premiums</li>
+                                    <li>You Can Be Fined if You Don’t Have Insurance</li>
+                                    <li>Taxes increase for the wealthy </li>
+                                    <li>Enrolling Can Be Complicated</li>
+                                </ul>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content sources">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="center"> Sources</h2>
+                                <div class="sources center">
+                                    <p><a href="http://time.com/money/3936185/what-is-obamacare/">What is Obamacare?</a></p>
+                                    <p><a href="http://www.bbc.com/news/world-us-canada-24370967">More about Obamacare</a></p>
+                                    <p><a href="http://www.healthline.com/health/consumer-healthcare-guide/pros-and-cons-obamacare#Cons3">Pros and Cons</a></p>
+                                    <p><a href="http://www.cnn.com/2012/06/28/politics/supreme-court-health-timeline/">Timeline</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- End container-fluid -->
-        <div class="timeline slide"></div> 
-        <div class="pros-and-cons slide"></div>
-        <div class="sources slide"></div>
+        </div> <!-- End .obama-slider-->
     </div>
     <div id="twitter-api" class="section">
 
@@ -148,7 +215,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-xs-2">
+                                    <div class="col-xs-2 mobile-hidden">
                                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>Logo: Twitter</title><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/></svg>
                                     </div>
                                 </div>
@@ -191,7 +258,7 @@
         </div>
     </div>
     <div id="trump-google-maps" class="section">
-        <h3 class="center">Key events related to Obamacare</h3>
+        <h4 class="center">Key events related to Obamacare</h4>
         <div id="map"></div>
 
 
