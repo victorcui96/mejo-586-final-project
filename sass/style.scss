@@ -256,6 +256,9 @@
         @media screen and (min-width: $screen-xlg) {
             max-height: 800px;
         }
+        @media screen and (min-width: $screen-gigantic) {
+            max-height: 1100px;
+        }
         margin: 0 auto;
         width: 70%;
         overflow-x: hidden;
@@ -333,6 +336,9 @@
             max-height: 600px;
             @media screen and (min-width: $screen-xlg) {
                 max-height: 800px;
+            }
+            @media screen and (min-width: $screen-gigantic) {
+                max-height: 1100px;
             }
             overflow-x: hidden;
             overflow-y: scroll;

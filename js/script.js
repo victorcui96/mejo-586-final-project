@@ -17,7 +17,7 @@ $(document).ready(function() {
         //Design
         controlArrows: true,
         verticalCentered: true,
-        sectionsColor: ['white', '#93F9FF', '#FFAF79', 'whitesmoke', 'whitesmoke'],
+        sectionsColor: ['white', '#e6f9ff', '#ffcc99', 'whitesmoke', 'whitesmoke'],
         paddingTop: '3em',
         paddingBottom: '10px',
         responsiveWidth: 0,
@@ -28,6 +28,7 @@ $(document).ready(function() {
         //Custom selectors
         lazyLoading: true
     });
+    console.log($(window).width());
 
 
 
