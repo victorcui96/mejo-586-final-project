@@ -175,6 +175,11 @@
             @media screen and (min-width: $screen-md) {
                 display: block;
             }
+            .gentium-header {
+                h2 {
+                    font-family: $gentium;
+                }
+            }
             .slide-content {
                 // border: 2px solid black;
                 // width: 80%;

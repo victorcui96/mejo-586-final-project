@@ -1,4 +1,7 @@
-<?php ini_set('display_errors', 1); //set this to 0 in public ?>
+<?php 
+    // displays errors->used for debugging
+    // ini_set('display_errors', 1);
+?>
 <!-- set the default timezone to use. -->
 <?php date_default_timezone_set('America/New_York'); ?>
 
@@ -14,6 +17,7 @@
     </ul>
 </div>
 
+<!-- My fullpage.js container -->
 <div id="fullpage">
     <div id="fullscreen-obama" class="section">
         <div class="container-fluid">
@@ -32,6 +36,7 @@
         </div>
     </div>
     <div id="info-slider" class="section">
+        <!-- Only shows on mobile -->
         <div class="mobile-view">
             <div class="container-fluid">
                 <div class="row">
@@ -59,8 +64,9 @@
                 </div>
             </div>
         </div>
+        <!-- Shows on Tablet and up -->
         <div class="obama-slider">
-            <div class="slide">
+            <div class="slide gentium-header">
                 <h2 class="center block">Fast Facts</h2>
                 <div class="slide-content fast-facts">
                     <ul class="clearfix">
@@ -260,7 +266,6 @@
     <div id="trump-google-maps" class="section">
         <h4 class="center">Key events related to Obamacare</h4>
         <div id="map"></div>
-
 
     </div>
     <div id="nytimes-api" class="section">

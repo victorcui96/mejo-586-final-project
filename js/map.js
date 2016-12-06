@@ -1,15 +1,12 @@
 	function initMap() {
-	    // Create a map object pphbandand specify the DOM element for display.
+	    // Create a map object and specify the DOM element for display.
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	        center: { lat: 38.8977, lng: -77.0365 }, // White House
 	        mapTypeId: 'terrain',
 	        scrollwheel: false,
 	        zoom: 13
 	    });
-
-	    // Create an array of alphabetical characters used to label the markers.
-	    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
+	    // The icons on the google map
 	    var pointsOfInterest = [{
 	            // Capitol Building
 	            lat: 38.889931,
@@ -110,11 +107,9 @@
 	                '</div>' +
 	                '</div>'
 	        }
-	        // { lat: 38.5, lng: -78.0 }
-
 	    ];
 
-	    // Infowindows -> show when user clicks on a marker
+	    // Infowindows -> they show when user clicks on a marker
 	    var infowindows = [];
 	    for (var i = 0; i < pointsOfInterest.length; i++) {
 	        var infowindow = new google.maps.InfoWindow({
@@ -126,6 +121,7 @@
 	    // All the Markers
 	    var markers = [];
 
+	    // Associate infowindows with their respective markers
 	    for (var i = 0; i < pointsOfInterest.length; i++) {
 	        var placeLocation = pointsOfInterest[i];
 	        var marker;
@@ -147,13 +143,11 @@
 	        markers.push(marker);
 	        var infowindow = infowindows[i];
 	        google.maps.event.addListener(marker, 'click', function(marker, innerInfoWindow) {
-	            console.log(infowindow);
+	            // console.log(infowindow);
 	            return function() {
 	                innerInfoWindow.open(map, marker);
 	            };
 	        }(marker, infowindow));
-
-
 	    }
 
 	    // Add a marker clusterer to manage the markers.

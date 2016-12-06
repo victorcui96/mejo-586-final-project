@@ -1,5 +1,6 @@
 $(document).ready(function() {
     "use strict";
+    // Render fullpage.js
     $('#fullpage').fullpage({
         afterRender: function() {},
         //Navigation
@@ -27,14 +28,6 @@ $(document).ready(function() {
         //Custom selectors
         lazyLoading: true
     });
-    var wow = new WOW({
-        mobile: false // default
-    });
-    wow.init();
-
-    
-
-    
 
 
 
